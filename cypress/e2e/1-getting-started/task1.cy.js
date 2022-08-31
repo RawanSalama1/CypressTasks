@@ -9,8 +9,7 @@ describe('Internet hookuaap ', ()=> {
        cy.get('#password').type('SuperSecretPassword!')
        cy.get('.radius').click()
        cy.get('#flash').should('exist').contains('You logged into a secure area!')
-      // cy.get('.button').click()
-      //  cy.get('#flash').should('exist').contains('You logged out of the secure area!')
+
     })
     it('Logout Succesffuly', ()=>{
 
