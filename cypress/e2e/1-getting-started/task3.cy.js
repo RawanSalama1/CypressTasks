@@ -8,7 +8,7 @@ describe('Verify computer is added ', () => {
         cy.get('.input').eq(0).type('test')
         cy.get('.input').eq(1).type('test')
         cy.get('.button').eq(1).click()
-        
+
     })
 
     it('Open new account', () => {
@@ -73,7 +73,7 @@ describe('Verify computer is added ', () => {
         cy.get('.title').contains('Transfer Complete!').should('exist')
         cy.get('#amount').should('exist')
     })
-    it('Fill invalid input in transfer',()=> {
+    it('Fill invalid input in transfer', () => {
         cy.get('li').contains('Open New Account').click()
         cy.get('#type').eq(0).select('SAVINGS')
         cy.get('#fromAccountId').eq(0).select(0)
