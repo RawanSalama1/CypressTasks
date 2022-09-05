@@ -4,7 +4,7 @@ class HomePage {
         cy.visit('https://www.demoblaze.com/index.html#')
     }
     Monitor() {
-        cy.contains('Monitors').click()
+        cy.get('[onClick*=byCat]').eq(2).click()
     }
 }
 
