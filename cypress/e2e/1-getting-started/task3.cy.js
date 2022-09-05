@@ -5,23 +5,23 @@
 describe('Verify computer is added ', () => {
     beforeEach(() => {
         cy.visit('https://parabank.parasoft.com/parabank/index.htm')
-        cy.get('.input').eq(0).type('test')
-        cy.get('.input').eq(1).type('test')
+        cy.get('.input').eq(0).type('rawan')
+        cy.get('.input').eq(1).type('rawan')
         cy.get('.button').eq(1).click()
 
     })
 
-    it('Open new account', () => {
+    it.only('Open new account', () => {
         cy.get('li').contains('Open New Account').click()
         cy.get('#type').eq(0).select('SAVINGS')
-        cy.get('#fromAccountId').eq(0).select(0)
+        cy.get('select').eq(0).select(0)
+        cy.wait(2000)
         cy.get('.button').contains('Open New Account').click()
-        cy.wait(3000)
         cy.get('#newAccountId').then($AccNum => {
             const num = $AccNum.text()
             cy.log(num)
             cy.get('li').contains('Accounts Overview').click()
-            cy.get('a.ng-binding').contains(num).should('exist', '$50.00')
+            cy.get('a.ng-binding').contains(num).should('exist', '$200.00')
         })
 
     })
@@ -40,9 +40,23 @@ describe('Verify computer is added ', () => {
         cy.get('.button').contains('Send Payment').click()
     })
     it('Leave all the fields empty', () => {
+        cy.get('li').contains('Bill Pay').click()
         cy.get('.button').contains('Send Payment').click()
+        cy.get('.error').contains('Payee name is required.').should('exist')
+        cy.get('.error').contains('Address is required.').should('exist')
+        cy.get('.error').contains('City is required.').should('exist')
+        cy.get('.error').contains('State is required.').should('exist')
+        cy.get('.error').contains('Zip Code is required.').should('exist')
+        cy.get('.error').contains('Phone number is required.').should('exist')
+        cy.get('[ng-show *="validationModel.account"]').should('exist')
+        cy.get('[ng-show*="validationModel.verifyAccount"]').should('exist')
+        cy.get('.error').contains('The amount cannot be empty.').should('exist')
+
+
+
     })
     it('Fill the fields with invalid input', () => {
+
         cy.get('li').contains('Bill Pay').click()
         cy.get('input[name = "payee.name"]').type('123')
         cy.get('input[name = "payee.address.street"]').type('ram')
