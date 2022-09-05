@@ -7,4 +7,5 @@ class HomePage {
         cy.contains('Monitors').click()
     }
 }
+
 export default HomePage

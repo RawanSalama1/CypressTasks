@@ -16,5 +16,6 @@ describe('Test Suite 3', () => {
         monitor.CheckName()
         cart.AddCart()
         table.checkTable()
+
     })
 })

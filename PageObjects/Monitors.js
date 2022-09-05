@@ -9,4 +9,5 @@ class Monitors {
         cy.get('.hrefch').contains('ASUS Full HD').click()
     }
 }
+
 export default Monitors
