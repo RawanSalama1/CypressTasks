@@ -10,9 +10,10 @@ const cart = new CartPage()
 const table = new Product()
 describe('Test Suite 3', () => {
     it('Visit Website and click on Monitors', () => {
-
+        cy.intercept('https://api.demoblaze.com/bycat').as('get')
         home.visit()
-        home.Monitor()
+        home.ClickOnMonitor()
+        cy.wait('@get')
         monitor.CheckName()
         cart.AddCart()
         table.checkTable()
