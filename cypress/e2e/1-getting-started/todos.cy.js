@@ -8,7 +8,7 @@ describe('Test Suite 3', () => {
     // it('Adds Two itemds to the todo list', () => {
 
     // })
-    it('Yest Todo APP', () => {
+    it('Test Todo APP', () => {
         cy.get('.new-todo').type(`${todo.todo1}{enter}`)
         cy.get('.new-todo').type(`${todo.todo2}{enter}`)
         cy.get('.ng-binding').eq(0).should('exist').contains(todo.todo1)
