@@ -11,7 +11,7 @@ describe('Verify computer is added ', () => {
 
     })
 
-    it('Open new account', () => {
+    it.skip('Open new account', () => {
         cy.get('li').contains('Open New Account').click()
         cy.get('#type').eq(0).select('SAVINGS')
         cy.get('#fromAccountId').eq(0).select(0)
@@ -25,7 +25,7 @@ describe('Verify computer is added ', () => {
         })
 
     })
-    it('Poistove tests on Bill Payment Service', () => {
+    it.skip('Poistove tests on Bill Payment Service', () => {
         cy.get('li').contains('Bill Pay').click()
         cy.get('input[name = "payee.name"]').type('123')
         cy.get('input[name = "payee.address.street"]').type('ram')
@@ -39,10 +39,10 @@ describe('Verify computer is added ', () => {
         cy.get('select').eq(0).select(0)
         cy.get('.button').contains('Send Payment').click()
     })
-    it('Leave all the fields empty', () => {
+    it.skip('Leave all the fields empty', () => {
         cy.get('.button').contains('Send Payment').click()
     })
-    it('Fill the fields with invalid input', () => {
+    it.skip('Fill the fields with invalid input', () => {
         cy.get('li').contains('Bill Pay').click()
         cy.get('input[name = "payee.name"]').type('123')
         cy.get('input[name = "payee.address.street"]').type('ram')
@@ -58,7 +58,7 @@ describe('Verify computer is added ', () => {
         cy.get('.button').contains('Send Payment').click()
         cy.get('.error').should('exist').contains('Please enter a valid number.')
     })
-    it('Positive Test on transfer Funds', () => {
+    it.skip('Positive Test on transfer Funds', () => {
         cy.get('li').contains('Open New Account').click()
         cy.get('#type').eq(0).select('SAVINGS')
         cy.get('#fromAccountId').eq(0).select(0)
@@ -73,7 +73,7 @@ describe('Verify computer is added ', () => {
         cy.get('.title').contains('Transfer Complete!').should('exist')
         cy.get('#amount').should('exist')
     })
-    it('Fill invalid input in transfer', () => {
+    it.skip('Fill invalid input in transfer', () => {
         cy.get('li').contains('Open New Account').click()
         cy.get('#type').eq(0).select('SAVINGS')
         cy.get('#fromAccountId').eq(0).select(0)
