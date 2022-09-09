@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
-    "test": "cypress run"
+    "test": "cypress run --02b29165-93eb-4789-a274-a49d2f3add3a"
   },
   "keywords": [],
   "author": "",

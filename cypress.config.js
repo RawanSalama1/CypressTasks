@@ -28,6 +28,9 @@ function queryTestDb(query, config) {
 
 module.exports = defineConfig({
 
+  projectId: "oo9qw4",
+  // The rest of the Cypress config options go here...
+
   reporter: 'cypress-mochawesome-reporter',
 
 
