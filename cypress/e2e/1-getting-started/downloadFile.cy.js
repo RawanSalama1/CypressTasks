@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 import test from "../../fixtures/data.json"
-const filePath = ("/workspace/test_tq1/cypress/downloads/samplecsvfile_2kb.csv")
+
+const filePath = ("/Bin/Jenkins/workspace/test_tq1/cypress/downloads/SampleCSVFile_2kb.csv")
 describe('download csv file', () => {
     it('Check rows in csv file', () => {
         cy.visit('https://sample-videos.com/download-sample-csv.php')
@@ -18,8 +19,6 @@ describe('download csv file', () => {
                 expect(jsonData[0].data[0][7]).to.eq(test.data8)
                 expect(jsonData[0].data[0][8]).to.eq(test.data9)
                 expect(jsonData[0].data[0][9]).to.eq(test.data10)
-
-
 
 
             }
