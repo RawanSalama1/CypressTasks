@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import test from "../../fixtures/data.json"
-const filePath = '*/cypress/downloads/SampleCSVFile_2kb'
+const filePath = '*/cypress/*'
 
 describe('download csv file', () => {
     it('Check rows in csv file', () => {
