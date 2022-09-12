@@ -5,7 +5,7 @@ describe('Fill the form using the data stored in data.json file.', () => {
     beforeEach(() => {
         cy.visit('https://demoqa.com/text-box')
     })
-    it('Fill the form', () => {
+    it.skip('Fill the form', () => {
 
         cy.get("#userName").type(data.data1)
         cy.get('#userEmail').type(data.data2)

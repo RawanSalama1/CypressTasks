@@ -3,7 +3,7 @@ describe('Test Computer database application', () => {
     beforeEach(() => {
         cy.visit('https://computer-database.gatling.io/computers')
     })
-    it.only('Add new computer', () => {
+    it.skip('Add new computer', () => {
         cy.get('#add').click();
         cy.get('#name').type('rawan')
         cy.get('#introduced').type('2022-12-03')
@@ -13,7 +13,7 @@ describe('Test Computer database application', () => {
         cy.get('.alert-message').should('exist').contains('Done ! Computer rawan has been created')
         cy.get('h1').contains('574 computers found').should('be.visible')
     })
-    it('Verify computer is filtered', () => {
+    it.skip('Verify computer is filtered', () => {
         cy.get('#searchbox').type('ASCI purple')
         cy.get('#searchsubmit').click()
         cy.get('tbody').should('have.length', 1)

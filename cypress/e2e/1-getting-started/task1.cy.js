@@ -3,7 +3,7 @@ describe('Internet hookuaap ', () => {
     beforeEach(() => {
         cy.visit('https://the-internet.herokuapp.com/login')
     })
-    it('Open the application successfully', () => {
+    it.skip('Open the application successfully', () => {
 
         cy.get('#username').type('tomsmith')
         cy.get('#password').type('SuperSecretPassword!')
@@ -11,7 +11,7 @@ describe('Internet hookuaap ', () => {
         cy.get('#flash').should('exist').contains('You logged into a secure area!')
 
     })
-    it('Logout Succesffuly', () => {
+    it.skip('Logout Succesffuly', () => {
 
         cy.get('#username').type('tomsmith')
         cy.get('#password').type('SuperSecretPassword!')
@@ -20,7 +20,7 @@ describe('Internet hookuaap ', () => {
         cy.get('#flash').should('exist').contains('You logged out of the secure area!')
     })
 
-    it('Put invalid username and password', () => {
+    it.skip('Put invalid username and password', () => {
         cy.get('#username').type('rawan')
         cy.get('#password').type('123')
         cy.get('.radius').click()

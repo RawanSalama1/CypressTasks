@@ -9,7 +9,7 @@ const monitor = new Monitors()
 const cart = new CartPage()
 const table = new Product()
 describe('Test Suite 3', () => {
-    it('Visit Website and click on Monitors', () => {
+    it.skip('Visit Website and click on Monitors', () => {
         cy.intercept('https://api.demoblaze.com/bycat').as('get')
         home.visit()
         home.ClickOnMonitor()

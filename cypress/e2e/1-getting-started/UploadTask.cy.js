@@ -4,7 +4,7 @@ describe('Fill the form using the data stored in data.json file.', () => {
     beforeEach(() => {
         cy.visit('https://demoqa.com/upload-download')
     })
-    it('Upload File Successfully', () => {
+    it.skip('Upload File Successfully', () => {
 
         const imageFile = 'sunset.png'
 
