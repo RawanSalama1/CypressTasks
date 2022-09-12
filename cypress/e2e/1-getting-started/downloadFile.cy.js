@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import test from "../../fixtures/data.json"
-const filePath = ("$JENKINS_HOME/workspace/test_tq1/cypress/downloads/samplecsvfile_2kb.csv")
+const filePath = ("$JENKINS_HOME/workspace/test_tq1/cypress/downloads/samplecsvfile_2kb.csv" || "/Users/rs2/OneDrive-AXSOSAG/JSTester/New/cypress/downloads/samplecsvfile_2kb.csv")
 describe('download csv file', () => {
     it('Check rows in csv file', () => {
         cy.visit('https://sample-videos.com/download-sample-csv.php')
