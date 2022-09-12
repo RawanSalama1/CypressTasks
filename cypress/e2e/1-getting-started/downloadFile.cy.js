@@ -1,11 +1,10 @@
 /// <reference types="cypress" />
 import test from "../../fixtures/data.json"
-const filePath = '*/cypress/*'
-
+const filePath = "/Users/rs2/OneDrive - AXSOS AG/JSTester/New/cypress/downloads/SampleCSVFile_2kb.csv"
 describe('download csv file', () => {
     it('Check rows in csv file', () => {
         cy.visit('https://sample-videos.com/download-sample-csv.php')
-        cy.get('.download_csv').eq(0).click
+        cy.get('.download_csv').eq(0).click()
         cy.wait(2000);
         cy.task('parseXlsx', { filePath }).then(
             jsonData => {
